@@ -1,39 +1,10 @@
 <!DOCTYPE html> 
 <html> 
-<!-- The following code has been developed by students and/or researchers of the Freshman Research Initiative DIY Diagnostics Stream at The University of Texas at Austin.  This code is shared for demonstration purposes and should not be considered a product -- it is for entertainment purposes only.  Any user of this code does so at their own risk. Members of the DIY Stream, FRI, and The University of Texas system are not liable for anything related to this code.
- 
-THIS CODE SHOULD NOT BE USED TO DIAGNOSE ANY KIND OF MEDICAL CONDITION.
- 
- 
-Authors in chronological order of contribution:
-Tim Riedel
-Jasmine Wani
- 
-Further Information:
-http://cns.utexas.edu/fri
- 
-Research Educator:
-Timothy Riedel
-triedel@utexas.edu
- 
-Brief Description of Goal of Code:
-COVID or Flu?
- 
-Known Issues:
-Probability shows, not exact percentage number
-https://www.w3schools.com/w3css/default.asp
-https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-file
-	
-	
 	
    <head> 
-<!-- I am going to set a new title -->
 	   
       <title>Is it Coronavirus or the Flu?</title>  
-      <meta name="viewport" content="width=device-width, initial-scale=1">
-      <meta name="apple-mobile-web-app-capable" content="yes">
-      <link rel="stylesheet" href="w3.css">
-      <link rel="stylesheet" href="w3-colors-flat.css">
+ 
    </head> 
 
 	<!-- Here we have assigned two variables to count the score for either COVID or Flu, we start the count at 0 and add 1 as we call the function -->
@@ -60,7 +31,7 @@ function covidAdd(){ covid_count = covid_count + 1; document.getElementById("cov
 function fluAdd(){ flu_count = flu_count + 1; document.getElementById("flucount").innerHTML = flu_count;}
 
  
-function fluPercentagefunction(){flu_percentage = Math.round((flu_count/4)*100);document.getElementById("flupercentage").innerHTML = flu_percentage;}
+function fluPercentagefunction(){flu_percentage = Math.round((flu_count/4)*100);document.getElementById("coldpercentage").innerHTML = flu_percentage;}
  function covidPercentagefunction(){covid_percentage = Math.round((covid_count/4)*100);document.getElementById("covidpercentage").innerHTML = covid_percentage;} 
 
 
@@ -98,22 +69,20 @@ function fluPercentagefunction(){flu_percentage = Math.round((flu_count/4)*100);
 <div id="content" class="w3-container">
   <p>Are you feeling like you might have COVID but wonder if it is the Flu? Answer a few short questions to find out!</p>
   <a href="#one" class="w3-btn w3-grey w3-round"> Get Started </a>
-	<!-- adding an image of a coronavirus particle to main page-->
-   	 <img src="https://www.pennmedicine.org/news/-/media/images/pr%20news/news/2022/april/covid19%20dna.ashx" alt="alternatetext" style="width:400px;height:300px;">
-		<style>
-       		img, object{
+  <a href="#one" class="w3-btn w3-grey w3-round"> Get Started </a>
+      <img src="https://www.pennmedicine.org/news/-/media/images/pr%20news/news/2022/april/covid19%20dna.ashx" alt="alternatetext"style="width:400px;height:300px;">
+      <style>
+       	img, object{
             	max-height:90%;
-        	max-width:90%;
+        		max-width:90%;
         	}
-		</style>
-
+</style>
+>
 
 <!-- assigning page 1. Each page will be referred from the buttons-->
 
 	<div class="page" id="one">
   <div id="header" class="w3-container w3-flat-carrot">
-	  
-	  
   <!-- Here I am asking the first question -->
     <h1>Are you experiencing shortness of breath?</h1>
   </div>
@@ -214,8 +183,8 @@ function fluPercentagefunction(){flu_percentage = Math.round((flu_count/4)*100);
 <!-- Here I will print my results-->
      <p id="results">
     
-  <h1>Probability it is COVID = <span id="covid_count"></span></h1>
-  <h1>Probability it is the Flu = <span id="flu_count"></span></h1>
+  <h1>Probability it is COVID = <span id="covidcount"></span></h1>
+  <h1>Probability it is the Flu = <span id="flucount"></span></h1>
   
   <h1> COVID Percentage = <span id="covid_percentage"></span> %</h1>
   <h1> Flu Percentage = <span id="flu_percentage"></span> % </h1>
