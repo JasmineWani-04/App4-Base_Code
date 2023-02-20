@@ -7,44 +7,69 @@ THIS CODE SHOULD NOT BE USED TO DIAGNOSE ANY KIND OF MEDICAL CONDITION.
  
 Authors in chronological order of contribution:
 Tim Riedel
-Author 2
+Jasmine Wani
  
 Further Information:
-http://diystream.cns.utexas.edu/
-
+http://cns.utexas.edu/fri
+ 
 Research Educator:
 Timothy Riedel
 triedel@utexas.edu
  
 Brief Description of Goal of Code:
-blah, blah, blah,
+Cold or Allergies
  
 Known Issues:
 blah, blah, blah, blah
-Ignore this error message if you see it using the javaScript console: Error with Permissions-Policy header: Origin trial controlled feature not enabled: 'interest-cohort'.
-
-References:
 https://www.w3schools.com/w3css/default.asp
 https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-file
--->
 	
-<head> 
-	<title>Hello World</title>  
-]	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="apple-mobile-web-app-capable" content="yes">
-	<link rel="stylesheet" href="w3.css">
-	<link rel="stylesheet" href="w3-colors-flat.css">
-</head> 
+<!-- This is how to write a comment-->
+	
+	
+   <head> 
+<!-- I am going to set a new title this -->
+	   
+      <title>Is it allergies or a cold!</title>  
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="apple-mobile-web-app-capable" content="yes">
+      <link rel="stylesheet" href="w3.css">
+      <link rel="stylesheet" href="w3-colors-flat.css">
+   </head> 
 
+	<!-- Here we have assigned two variables to count the score for either allergy or code we start the count at 0 and add 1 as we call the function -->
+	<!-- We also create 2 more variables that will hold the percentage of the cold and allergy results -->
+
+<!-- assigning allergy count to the value of allergy_count function so I can print it -->
+<!-- assigning coldcount to the value of cold_count function so I can print it -->
+	
+	
+<!-- assigning allergypercentage to the value of allergy_percentage function so I can print it I am just doing the allergy_count/7 times 100 -->
+<!-- assigning allergypercentage to the value of cold_percentage function so I can print it. I am just doing the cold_count/7 times 100 -->
+<!-- Math.round will round my percentage -->
+<!-- document.getElementById will let me refer to the variable later on in the code-->
 <script>
+	
+ var allergy_count = 0;
+ var cold_count = 0;
 
-	//YOUR JAVASCRIPT GOES HERE
+  var  cold_percentage = 0;
+  var  allergy_percentage = 0;
+ 
 
-</script>	
+function allergyAdd(){ allergy_count = allergy_count + 1; document.getElementById("allergycount").innerHTML = allergy_count;}
+function coldAdd(){ cold_count = cold_count + 1; document.getElementById("coldcount").innerHTML = cold_count;}
+
+ 
+function coldPercentagefunction(){cold_percentage = Math.round((cold_count/6)*100);document.getElementById("coldpercentage").innerHTML = cold_percentage;}
+ function allergyPercentagefunction(){allergy_percentage = Math.round((allergy_count/6)*100);document.getElementById("allergypercentage").innerHTML = allergy_percentage;} 
 
 
-<!-- THIS STYLE CODE HELPS MAKE YOUR APP LOOK GOOD. PROBABLY DONT MESS WITH IT -->
-<style>	
+
+  </script>
+
+
+<style> 
 .body {
      margin: 0em;
 }
@@ -67,9 +92,178 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 </style>
 
 <body>
+<div id="header" class="w3-container w3-flat-carrot">
+  <h1>Cold or Allergies?</h1>
+</div>
+  
+<div id="content" class="w3-container">
+  <p>Are you feeling like you might have a cold but wonder if it is allergies. Answer a few short questions to find out!</p>
+  <a href="#one" class="w3-btn w3-grey w3-round"> Get Started </a>
 	
-	<!-- HERE IS WHERE ALL OF YOUR HTML PAGES GO -->
-	REPLACE THIS TEXT
+<!-- assigning page 1. Each page will be referred from the buttons-->
+
+	<div class="page" id="one">
+  <div id="header" class="w3-container w3-flat-carrot">
+  <!-- Here I am asking the first question -->
+    <h1>Are your eyes watery or itchy?</h1>
+  </div>
+
 	
+        <!-- Here I am adding 2 buttons for Yes and No for the question-->
+      <div id="content" class="w3-container">    
+    <p>
+<!-- Here I am calling the allergyadd allergy add when Yes is selected -->
+  <a href="#two" class="w3-button w3-block w3-black" style="width:80%" onclick="allergyAdd()"> Yes </a>
+ <!-- Here I am calling the function coldadd add when No is selected -->
+  <a href="#two" class="w3-button w3-block w3-black" style="width:80%"  onclick="coldAdd()"> No </a>
+    </p>    
+
+  
+      </div>
+  
+
+</div>
+
+<!-- assigning page 2 -->
+
+
+<div class="page" id="two">
+<!-- Here I am asking the second question -->
+  <div class="w3-container w3-flat-carrot">
+    <h1>Do you have a fever</h1>
+  </div>
+<!-- Here I am adding 2 buttons for Yes and No for the question-->
+  <div id="content" class="w3-container">
+    <p> 
+<!-- Here I am calling the function coldAdd when Yes is selected -->
+  <a href="#three" class="w3-button w3-block w3-black" style="width:80%"  onclick="coldAdd()"> Yes </a>
+ <!-- Here I am calling the function Allergyadd add when No is selected -->
+  <a href="#three" class="w3-button w3-block w3-black" style="width:80%"  onclick="allergyAdd()"> No </a>
+    </p>
+  </div>
+</div>  
+  
+  <!-- assigning page 3 -->
+
+<!-- Here I am setting the third screens ID to 3 -->
+<div class="page" id="three">
+<!-- Here I am asking the 3rd question -->
+  <div class="w3-container w3-flat-carrot">
+    <h1>Do you have a sore throat?</h1>
+  </div>
+<!-- Here I am adding 2 buttons for Yes and No for the question-->
+  <div id="content" class="w3-container">
+    <p>
+  <!-- Here I am calling the function coldAdd  add when Yes is selected -->
+  <a href="#four" class="w3-button w3-block w3-black" style="width:80%"  onclick="coldAdd()"> Yes </a>
+ <!-- Here I am calling the function Allergyadd add when No is selected -->
+  <a href="#four" class="w3-button w3-block w3-black" style="width:80%"  onclick="allergyAdd()"> No </a>
+    </p>
+  </div>
+</div>  
+
+<!-- assigning page 4 -->
+
+<div class="page" id="four">
+<!-- Here I am asking the last question -->
+  <div class="w3-container w3-flat-carrot">
+    <h1>Are your symptoms seasonal or chronic?</h1>
+  </div>
+<!-- Here I am adding 2 buttons for Yes and No for the question-->
+  <div id="content" class="w3-container">
+    <p>
+<!-- Here I am calling the function allergyadd  when Yes is selected -->
+  <a href="#five" class="w3-button w3-block w3-black" style="width:80%"  onclick="allergyAdd()"> Yes </a>
+ <!-- Here I am calling the function coldadd add when No is selected -->
+ <!-- I am also looading the coldpercentagefunction and allergy percentage function to both buttons so that this triggers the calculation of percentages
+ -->
+
+  <a href="#five" class="w3-button w3-block w3-black" style="width:80%" onclick="coldAdd()"> No </a>
+    </p>
+  </div>
+</div>  
+	
+	
+</div>  
+		
+	
+	
+	
+
+
+<!-- assigning page 5 as my allergy question-->
+
+<div class="page" id="five">
+<!-- Here I am asking my first allergy question-->
+  <div class="w3-container w3-flat-carrot">
+    <h1>Do you have shortness of breath?</h1>
+  </div>
+<!-- Here I am adding 2 buttons for Yes and No for the question-->
+  <div id"content" class="w3-container">
+    <p>
+	   
+ <!-- I am also loading the coldpercentagefunction and allergy percentage function to both buttons so that this triggers the calculation of percentages
+<!-- Here I am calling the function allergyadd  when Yes is selected -->
+  <a href="#six" class="w3-button w3-block w3-black" style="width:80%"  onclick="allergyAdd()"> Yes </a>
+ <!-- Here I am calling the function coldadd add when No is selected -->
+  <a href="#six" class="w3-button w3-block w3-black" style="width:80%" onclick="coldAdd()"> No </a>
+    </p>
+  </div>
+</div>  
+
+
+
+	<!-- assigning page 6 as my cold question-->
+<!-- Here I am asking my first cold question-->
+
+<div class="page" id="six">
+  <div class="w3-container w3-flat-carrot">
+    <h1>Are you feeling general body aches/pains?</h1>
+  </div>
+<!-- Here I am adding 2 buttons for Yes and No for the question-->
+  <div id="content" class="w3-container">
+    <p>
+<!-- Here I am calling the function allergyadd  when Yes is selected -->
+  <a href="#seven" class="w3-button w3-block w3-black" onclick="coldAdd();coldPercentagefunction();allergyPercentagefunction()"> Yes </a>
+ <!-- Here I am calling the function coldadd add when No is selected -->
+ <!-- I am also loading the coldpercentagefunction and allergy percentage function to both buttons so that this triggers the calculation of percentages
+ -->
+  <a href="#seven" class="w3-button w3-block w3-black" onclick="allergyAdd();coldPercentagefunction();allergyPercentagefunction()"> No </a>
+    </p>
+  </div>
+</div>  
+
+	
+	
+<!-- assigning page 7 as results-->
+  
+<div class="page" id="seven">
+<!-- Here I am creating a page for results-->
+  <div class="w3-container w3-flat-carrot">
+    <h1>Results</h1>
+  </div>
+  <div id="content" class="w3-container">
+
+	  
+	  
+<!-- Here I will print my results-->
+     <p id="results">
+    
+  <h1>Probability it is allergies = <span id="coldcount"></span></h1>
+  <h1>Probability it is a cold = <span id="allergycount"></span></h1>
+  
+  <h1> Allergy Percentage = <span id="allergypercentage"></span> %</h1>
+  <h1> Cold Percentage = <span id="coldpercentage"></span> % </h1>
+
+
+    </p>
+  </div>
+</div>  
+  
+  
+<footer class="w3-bottom w3-container w3-flat-carrot">
+  <p>Disclaimer: Seek medical/professional attention if you encounter any of these symptoms</p>
+</footer>
+
 </body>
 </html>
