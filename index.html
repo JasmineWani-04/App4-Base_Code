@@ -27,7 +27,7 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 	
 	
    <head> 
-<!-- I am going to set a new title this -->
+<!-- I am going to set a new title -->
 	   
       <title>Is it Coronavirus or the Flu?</title>  
       <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -178,7 +178,7 @@ function fluPercentagefunction(){flu_percentage = Math.round((flu_count/4)*100);
 <!-- Here I am calling the function covidadd  when Yes is selected -->
   <a href="#seven" class="w3-button w3-block w3-black" style="width:80%"  onclick="covidAdd()"> Yes </a>
  <!-- Here I am calling the function fluadd add when No is selected -->
- <!-- I am also looading the flupercentagefunction and covid percentage function to both buttons so that this triggers the calculation of percentages
+ <!-- I am also looading the flu[agefunction and covid percentage function to both buttons so that this triggers the calculation of percentages
  -->
 
   <a href="#seven" class="w3-button w3-block w3-black" style="width:80%" onclick="fluAdd()"> No </a>
@@ -210,8 +210,8 @@ function fluPercentagefunction(){flu_percentage = Math.round((flu_count/4)*100);
   <h1>Probability it is COVID = <span id="covidcount"></span></h1>
   <h1>Probability it is the Flu = <span id="flucount"></span></h1>
   
-  <h1> COVID Percentage = <span id="covid_percentage"></span> %</h1>
-  <h1> Flu Percentage = <span id="flu_percentage"></span> % </h1>
+  <h1> COVID Percentage = <span id="covidpercentage"></span> %</h1>
+  <h1> Flu Percentage = <span id="flupercentage"></span> % </h1>
 
 
     </p>
